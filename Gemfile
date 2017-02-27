@@ -14,6 +14,13 @@ gem "coffee-rails", "~> 4.2"
 gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
+gem "bcrypt", "~> 3.1.7"
+gem "config"
+gem "carrierwave"
+gem "mini_magick"
+gem "fog", "1.38.0"
+gem "faker", "1.7.3"
+
 group :development, :test do
   gem "byebug", platform: :mri
 end
