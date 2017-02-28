@@ -31,5 +31,15 @@ en:
     title: "Edit profile"
     password_confirmation: "Confirmation"
     save_changes: "Save changes"
+    profile_image: "Profile image"
   alt:
     profile_image: "profile image"
+    product_image: "product image"
+  recently:
+    product: "Product"
+    description: "Description"
+    price: "Price"
+    rating: "Rating"
+    title: "Recently viewed products"
+  show:
+    edit_profile: "Edit Profile"
