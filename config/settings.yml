@@ -12,3 +12,5 @@ validation:
   password: 6
   user_name_max: 15
   user_name_min: 3
+image:
+  profile_upload_size: "300x300"
