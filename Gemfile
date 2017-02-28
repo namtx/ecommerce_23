@@ -20,6 +20,8 @@ gem "carrierwave"
 gem "mini_magick"
 gem "fog", "1.38.0"
 gem "faker", "1.7.3"
+gem "bootstrap-sass", "~> 3.3.6"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri

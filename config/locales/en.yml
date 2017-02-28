@@ -1,3 +1,24 @@
 en:
   hello: "Hello world"
   project_name: "Ecommerce23"
+
+  header:
+    products: "Products"
+    login: "Login"
+    home: "Home"
+    logout: "Log out"
+    settings: "Settings"
+    profile: "Profile"
+    app_name: "Ecommerce23"
+  footer:
+    help: "Help"
+    about: "About"
+  login:
+    login: "Login"
+    remember_me: "Remember me"
+    forgot_password: "(forgot password)"
+    new_user: "New user?"
+    title: "Login"
+    signup: "Sign up now"
+  home:
+    title: "Home"
