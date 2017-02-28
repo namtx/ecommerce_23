@@ -43,3 +43,8 @@ en:
     title: "Recently viewed products"
   show:
     edit_profile: "Edit Profile"
+  show_product:
+    add_to_cart: "Add to cart"
+    reviews: "reviews"
+  error:
+    product_not_found: "Product is not found."
