@@ -16,3 +16,13 @@ image:
   profile_upload_size: "300x300"
 recently_viewed:
   per_page: 5
+paginate:
+  product_show: 12
+average_rate_round: 2
+min_rate: 1
+max_rate: 5
+search_form:
+  max_price: 10000000
+  min_price: 0
+  slider_step: 100000
+  slider_value: "[0, 2000000]"

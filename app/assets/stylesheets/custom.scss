@@ -77,26 +77,6 @@ p {
 
 /* header */
 
-.header-cart {
-  position: absolute;
-  text-align: center;
-  .svg-button-cart {
-    background-image: image-url("shopping-cart.svg");
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-  }
-  span.cart-count {
-    position: relative;
-    top: -17px;
-    left: -13px;
-    background-color: orange;
-    color: white;
-    border-radius: 50%;
-    padding: 6px;
-  }
-}
-
 .center {
   text-align: center;
   h1 {
@@ -113,6 +93,7 @@ p {
   letter-spacing: -1px;
   padding-top: 15px;
   font-weight: bold;
+  vertical-align: middle;
   &:hover {
     color: white;
     text-decoration: none;
@@ -281,7 +262,98 @@ table.recenty-viewed {
   }
   .rating {
     label {
-      font-size: 19px;
+      font-size: 22px;
     }
   }
+}
+
+/* hot trends */
+
+.hot-trends {
+  h1 {
+    padding-left: 0px;
+    text-align: left;
+  }
+}
+
+/* new products */
+
+.new-product {
+  h1 {
+    padding-left: 0px;
+    text-align: left;
+  }
+}
+
+/* filter bar */
+.filter-title {
+  h2 {
+    margin: 0;
+  }
+}
+
+.price-slider {
+  display: flex;
+  flex-direction: column;
+  label {
+    text-align: center;
+    padding-bottom: 10px;
+    &:last-child {
+      padding-top: 10px;
+      padding-bottom: 0;
+    }
+  }
+  .slider-wrapper {
+    text-align: center;
+  }
+}
+
+.full-width-image {
+  width: 100%;
+}
+.product-rate {
+  display: inline;
+}
+
+.product-price {
+  font-weight: 700;
+}
+
+.badge {
+  background-color: orange;
+}
+
+.card {
+  @include box-sizing;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid transparent;
+  &:hover{
+    border: 1px solid #e3e3e3;
+  }
+  &:hover .btn{
+    border: 1px solid #e3e3e3;
+    opacity: 1;
+    transition: ease-in 0.5;
+    &:hover {
+      border: 1px solid #f37022;
+      background-color: white;
+      color: #f37022;
+    }
+  }
+  .btn {
+    border-radius: 0;
+    background-color: #f37022;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0;
+  }
+}
+
+/* show product */
+
+.user-rate-product {
+  padding-left: 15px;
 }

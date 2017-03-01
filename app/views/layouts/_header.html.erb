@@ -4,11 +4,10 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("header.home"), root_path %></li>
-        <li><%= link_to t("header.products"), "#" %></li>
+        <li><%= link_to t("header.products"), products_path %></li>
           <li>
             <%= link_to "#", class: "header-cart" do %>
-              <i class="svg-button-cart"></i>
-              <span class="cart-count"></span>
+              <%= t("header.cart") %></i><span class="badge"></span>
             <% end %>
           </li>
           <li class="dropdown">

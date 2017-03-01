@@ -35,22 +35,24 @@ $(function(){
     readURL(this);
   });
 
-  $('.multi-item-carousel').carousel({
-    interval: 2000
+  $('#price-slider').slider({});
+
+  $('.product-rate').raty({
+    path: '/assets',
+    starOff: 'star-off.png',
+    starOn: 'star-on.png',
+    readOnly: true,
+    score: function(){
+      return $(this).attr('data-score');
+    }
   });
 
-  $('.multi-item-carousel .item').each(function(){
-    var next = $(this).next();
-    if (!next.length) {
-      next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-
-    if (next.next().length>0) {
-      next.next().children(':first-child').clone().appendTo($(this));
-    } else {
-    	$(this).siblings(':first').children(':first-child')
-        .clone().appendTo($(this));
+  $('.user-rate-product').raty({
+    path: '/assets',
+    starOff: 'star-off.png',
+    starOn: 'star-on.png',
+    score: function(){
+      return $(this).attr('data-score');
     }
   });
 });

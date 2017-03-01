@@ -1,0 +1,13 @@
+<div class = "row product-list">
+  <aside class="col-md-2">
+    <%= render "shared/search_form" %>
+  </aside>
+  <div class="col-md-10">
+    <% if @products.any? %>
+      <%= render @products %>
+      <%= will_paginate %>
+    <% else %>
+      <p class="text-info"><%= t "index_product.not_found" %></p>
+    <% end %>
+  </div>
+</div>

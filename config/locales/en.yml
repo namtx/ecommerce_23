@@ -11,6 +11,7 @@ en:
     profile: "Profile"
     app_name: "Ecommerce23"
     account: "Account"
+    cart: "Cart"
   footer:
     help: "Help"
     about: "About"
@@ -46,5 +47,15 @@ en:
   show_product:
     add_to_cart: "Add to cart"
     reviews: "reviews"
+    price: "Price"
+    buy_now: "buy now"
   error:
     product_not_found: "Product is not found."
+  search_form:
+    search: "Search"
+    all: "All"
+    price: "Price"
+    category: "Category"
+    rating: "Rating"
+  index_product:
+    not_found: "There is no product matches your search."
