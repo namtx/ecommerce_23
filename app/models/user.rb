@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
+
   has_many :comments, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :suggested_products, dependent: :destroy
@@ -19,9 +21,44 @@ class User < ApplicationRecord
 
   before_save {email.downcase!}
 
+  scope :order_by_name, -> desc do
+    desc ? order(user_name: :asc) : order(user_name: :desc)
+  end
+
   def self.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost
     BCrypt::Password.create string, cost: cost
+  end
+
+  def self.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    update_attribute :remember_digest, User.digest(remember_token)
+  end
+
+  def forget
+    update_attribute :remember_digest, nil
+  end
+
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    if digest.nil?
+      false
+    else
+      BCrypt::Password.new(digest).is_password? token
+    end
+  end
+
+  def is_user? user
+    self == user
+  end
+
+  private
+  def downcase_email
+    self.email = email.downcase
   end
 end
