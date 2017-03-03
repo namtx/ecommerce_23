@@ -22,10 +22,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
+  def show
+    @recently_viewed_products = recently_viewed_products.reverse
+      .paginate page: params[:page], per_page: Settings.paginate.recently_viewed
   end
 
-  def show
+  def edit
   end
 
   private

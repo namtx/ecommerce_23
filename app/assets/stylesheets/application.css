@@ -13,5 +13,5 @@
  *= require_tree .
  *= require_self
  *= require bootstrap-slider.min
- *= require jquery.raty.min
+ *= require jquery.raty
  */

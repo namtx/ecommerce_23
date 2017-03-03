@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-slider.min
-//= require jquery.raty.min
+//= require jquery.raty
+//= require bootstrap-sprockets

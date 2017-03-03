@@ -25,11 +25,11 @@
         </tr>
       </thead>
       <tbody>
-        <% @products.each do |product| %>
+        <% @recently_viewed_products.each do |product| %>
           <%= render partial: "recently_viewed", locals: {product: product} %>
         <% end %>
       </tbody>
     </table>
-    <%= will_paginate @products %>
+    <%= will_paginate @recently_viewed_products %>
   </div>
 </div>

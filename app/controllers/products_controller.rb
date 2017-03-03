@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    recently_viewed_products.push @product
   end
 
   private
