@@ -24,6 +24,7 @@ min_rate: 1
 paginate:
   product_show: 12
   user_per_page: 10
+  recently_viewed: 10
 average_rate_round: 2
 search_form:
   max_price: 10000000
@@ -31,3 +32,4 @@ search_form:
   slider_step: 100000
   slider_value: "[0, 2000000]"
 average_rate_round: 2
+cookie_recently_viewed: 20
