@@ -25,6 +25,8 @@ paginate:
   product_show: 12
   user_per_page: 10
   recently_viewed: 10
+  hot_trend_products: 12
+  top_new_products: 12
 average_rate_round: 2
 search_form:
   max_price: 10000000

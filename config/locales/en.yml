@@ -24,6 +24,8 @@ en:
     signup: "Sign up now"
   home:
     title: "Home"
+    hot_trend_products: "Hot trend products"
+    new_products: "New products"
   signup:
     title: "Sign up"
     password_confirmation: "Confirmation"

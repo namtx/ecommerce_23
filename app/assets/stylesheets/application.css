@@ -14,4 +14,6 @@
  *= require_self
  *= require bootstrap-slider.min
  *= require jquery.raty
+ *= require slick-theme
+ *= require slick
  */

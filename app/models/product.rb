@@ -16,7 +16,7 @@ class Product < ApplicationRecord
   validates :quantity, presence: true, numericality: {only_integer: true}
   validates :sub_category_id, presence: true
   validates :classification_id, presence: true
-
+  validates :image, presence: true
   scope :by_sub_category, ->sub_category_id do
     where sub_category_id: sub_category_id if sub_category_id.present?
   end
@@ -33,9 +33,31 @@ class Product < ApplicationRecord
     where "price <= #{max}" if max.present?
   end
 
+  scope :top_order_products, -> {
+    left_outer_joins(:order_details)
+    .uniq
+    .group("products.id")
+    .order("count(order_details.id) desc")
+    .take(Settings.paginate.hot_trend_products)}
+
+  scope :top_new_products, -> {order "created_at desc"}
+
+  def self.import file
+    CSV.foreach(file.path, headers: true) do |row|
+      product = Product.new row.to_h
+      product.image = open("/user/profile_image/24/#{row.to_h["image"]}")
+      product.save!
+    end
+  end
+
   def average_rate
     ((ratings.to_a.sum {|item| item.point}).to_f/ratings.count).
       round(Settings.average_rate_round)
+  end
+
+  def get_rating_by_user user
+    rating = ratings.find_by user: user
+    rating.present? ? rating.point : nil
   end
 
   def rate_count
