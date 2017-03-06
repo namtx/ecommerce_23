@@ -17,3 +17,4 @@
 //= require bootstrap-slider.min
 //= require jquery.raty
 //= require bootstrap-sprockets
+//= require slick.min

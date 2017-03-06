@@ -6,10 +6,10 @@
     </div>
     <div class="col-md-6">
       <h2><%= @product.name %></h2>
-      <div class="row">
-          <%= render partial: "shared/rating", locals: {product: @product} %>
+      <div class="row user-rate-product" product-id="<%= @product.id %>"
+        data-score="<%= @product.average_rate %>">
       </div>
-      <p class="ratings"><%= @rate_count %><%= t("show_product.reviews") %></p>
+      <i><%= pluralize(@product.rate_count, "review") %></i>
       <p class="description"><%= @product.description %></p>
       <h3 class="price"><%= @product.price %></h3>
       <%= link_to t("show_product.add_to_cart"), "#",
