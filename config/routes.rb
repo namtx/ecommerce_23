@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
 
   resources :users
-  resources :products
+  resources :products do
+    resources :ratings, only: :create
+  end
 end

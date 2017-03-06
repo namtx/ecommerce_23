@@ -312,7 +312,7 @@ table.recenty-viewed {
   width: 100%;
 }
 .product-rate {
-  display: inline;
+  display: block;
 }
 
 .product-price {
@@ -354,7 +354,7 @@ table.recenty-viewed {
 
 /* show product */
 
-.user-rate-product {
+.user-rate-product,{
   padding-left: 15px;
 }
 

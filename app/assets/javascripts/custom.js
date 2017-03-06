@@ -29,6 +29,10 @@ $(document).on('turbolinks:load', function(){
     autoplaySpeed: 2000
   });
 
+  $('.slider-vertical').remove();
+  $('#price-slider').slider({});
+
+  $('.product-rate').empty();
   $('.product-rate').raty({
     path: '/assets',
     starOff: 'star-off.png',
@@ -46,18 +50,24 @@ $(document).on('turbolinks:load', function(){
     score: function(){
       return $(this).attr('data-score');
     },
+    readOnly: $(this).attr('read-only') == 'true',
     click: function(score, event){
       product_id = $('.user-rate-product').attr('product-id');
+      rate_id = $('.user-rate-product').attr('rate-id');
+      user_id = $('.user-rate-product').attr('user-id');
       $.ajax({
         method: 'post',
-        url: product_id+'/ratings',
+        url: product_id + '/ratings/',
         data: {
           rating: {
+            product_id: product_id,
+            user_id: user_id,
             point: score
           }
         },
         success: function(){
           $('.user-rate-product').raty('score', score);
+          $('.user-rate-product').raty('readOnly', true);
         }
       });
       return false;
