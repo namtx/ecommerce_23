@@ -17,8 +17,8 @@
       <i><%= pluralize(@product.rate_count, "review") %></i>
       <p class="description"><%= @product.description %></p>
       <h3 class="price"><%= number_to_currency @product.price %></h3>
-      <%= link_to t("show_product.add_to_cart"), "#",
-        class: "btn btn-primary" %>
+      <a href="#" class="btn btn-primary btn-add-to-cart"
+        product="<%= @product.id %>"><%= t "button.add_to_cart" %></a>
     </div>
   </div>
 </div>

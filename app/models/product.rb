@@ -63,4 +63,8 @@ class Product < ApplicationRecord
   def rate_count
     ratings.count
   end
+
+  def is_out_of_stock? order_quantity
+    quantity < order_quantity
+  end
 end

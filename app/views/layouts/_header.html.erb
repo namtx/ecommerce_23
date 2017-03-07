@@ -7,8 +7,9 @@
         <li><%= link_to t("header.products"), products_path %></li>
         <% if logged_in? %>
           <li>
-            <%= link_to "#", class: "header-cart" do %>
-              <%= t("header.cart") %></i><span class="badge"></span>
+            <%= link_to carts_path, class: "header-cart" do %>
+              <%= t("header.cart") %></i><%= content_tag :span,
+                current_cart.size, class: "badge" %>
             <% end %>
           </li>
           <li class="dropdown">
@@ -16,8 +17,10 @@
               <%= current_user.user_name %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t("header.profile"), user_path(current_user) %></li>
-              <li><%= link_to t("header.settings"), edit_user_path(current_user) %></li>
+              <li><%= link_to t("header.profile"),
+                user_path(current_user) %></li>
+              <li><%= link_to t("header.settings"),
+                edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li><%= link_to t("header.logout"), logout_path,
                 method: :delete %></li>

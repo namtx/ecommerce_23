@@ -35,3 +35,6 @@ search_form:
   slider_value: "[0, 2000000]"
 average_rate_round: 2
 cookie_recently_viewed: 20
+order_status:
+  default: 1
+product_add_to_cart_default: 1
