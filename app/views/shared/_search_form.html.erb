@@ -1,4 +1,8 @@
 <%= form_tag products_path, method: :get do %>
+  <div>
+    <%= t "search_form.name" %><%= text_field_tag "name", nil, class: "form-control" %>
+  </div>
+
   <div><%= t "search_form.category" %><%= select_tag "sub_category",
     grouped_options_for_select(group_category_select),
     class: "select form-control", include_blank: t("search_form.all") %>

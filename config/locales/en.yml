@@ -53,11 +53,16 @@ en:
     buy_now: "buy now"
   error:
     product_not_found: "Product is not found."
+    rating_not_found: "Rating is not found."
+    rate_failed: "Rating failed"
+  success:
+    rate_success: "Thanks for your response"
   search_form:
     search: "Search"
     all: "All"
     price: "Price"
     category: "Category"
     rating: "Rating"
+    name: "Name"
   index_product:
     not_found: "There is no product matches your search."

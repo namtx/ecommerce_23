@@ -4,7 +4,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.by_sub_category(params[:sub_category])
-    .by_min_price(@min_price).by_max_price(@max_price)
+      .by_name(params[:name])
+      .by_min_price(@min_price)
+      .by_max_price(@max_price)
     if params[:rate].present?
       @products = @products.select do |product|
         product.average_rate > params[:rate].to_i
@@ -15,6 +17,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @rating = Rating.find_by product_id: params[:id],
+      user_id: current_user.id
     recently_viewed_products.push @product
   end
 

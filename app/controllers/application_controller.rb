@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   include ProductsHelper
-  
+
   private
   def logged_in_user
     unless logged_in?
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def correct_user
     @user = User.find_by id: params[:id]
-    if @user.nil? || current_user.is_user?(@user)
+    if @user.nil? || !current_user.is_user?(@user)
       flash[:danger] = t "error.user_not_found"
       redirect_to root_url
     end
