@@ -25,9 +25,21 @@ class UsersController < ApplicationController
   def show
     @recently_viewed_products = recently_viewed_products.reverse
       .paginate page: params[:page], per_page: Settings.paginate.recently_viewed
+    @orders = current_user.orders.paginate page: params[:page],
+      per_page: Settings.paginate.user_orders
   end
 
   def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "success.changed"
+      redirect_to @user
+    else
+      flash[:danger] =  t "error.edit"
+      render :edit
+    end
   end
 
   private

@@ -1,0 +1,7 @@
+<h1><%= t "mailer.order" %><%= @order.id %><%= t "mailer.confirmation" %></h1>
+
+<p>
+  <%= @user.user_name %>,
+</p>
+
+<%= link_to t("mailer.confirm"), edit_order_confirmation_url(@order.confirmation_token, email: @user.email, order_id: @order.id) %>
