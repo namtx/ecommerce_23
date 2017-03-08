@@ -12,4 +12,5 @@ class Order < ApplicationRecord
   validates :full_name, presence: true,
     length: {maximum: Settings.validation.full_name}
   validates :phone, presence: true, length: {maximum: Settings.validation.phone}
+
 end

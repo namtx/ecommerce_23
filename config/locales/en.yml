@@ -55,6 +55,11 @@ en:
     product_not_found: "Product is not found."
     rating_not_found: "Rating is not found."
     rate_failed: "Rating failed"
+    permission_denied: "Permission denied."
+    please_log_in: "Please login."
+    product_out_of_stock: "Product is out of stock"
+  button:
+    add_to_cart: "Add to cart"
   success:
     rate_success: "Thanks for your response"
   search_form:
@@ -66,3 +71,14 @@ en:
     name: "Name"
   index_product:
     not_found: "There is no product matches your search."
+  cart:
+    in_stock: "in stock"
+    item_price: "ITEM PRICE"
+    quantity: "QUANTITY"
+    order_summary: "Order summary"
+    total_payment_amount: "(Total payment amount)"
+    total: "Total"
+    no_item: "There is no product in your cart. Add more!"
+    title: "Shopping cart"
+  product:
+    price: "PRICE: "
