@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include CartsHelper
 
   private
-  
+
   def logged_in_user
     unless logged_in?
       store_location
@@ -26,6 +26,15 @@ class ApplicationController < ActionController::Base
     unless current_user.admin?
       redirect_to root_path
       flash[:danger] = t "error.permission_denied"
+    end
+  end
+
+  def get_price_params
+    price_str = params[:price]
+    if price_str.present?
+      prices = price_str.split(",")
+      @max_price = prices.last
+      @min_price = prices.first
     end
   end
 end
