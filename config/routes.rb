@@ -25,5 +25,9 @@ Rails.application.routes.draw do
     end
     resources :users, only: [:index, :destroy]
     resources :orders
+    resources :suggested_products, only: [:index, :destroy]
+    resources :statistics
+    resources :categories
+    resources :sub_categories
   end
 end
