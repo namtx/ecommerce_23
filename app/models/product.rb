@@ -33,6 +33,10 @@ class Product < ApplicationRecord
     where "price <= #{max}" if max.present?
   end
 
+  scope :by_classification, ->classification_id do
+    where classification_id: classification_id if classification_id.present?
+  end
+
   scope :top_order_products, -> {
     left_outer_joins(:order_details)
     .uniq
@@ -42,11 +46,16 @@ class Product < ApplicationRecord
 
   scope :top_new_products, -> {order "created_at desc"}
 
-  def self.import file
-    CSV.foreach(file.path, headers: true) do |row|
-      product = Product.new row.to_h
-      product.image = open("/user/profile_image/24/#{row.to_h["image"]}")
-      product.save!
+  def self.import? file
+    ActiveRecord::Base.transaction do
+      CSV.foreach(file.path, headers: true) do |row|
+        product = Product.new row.to_h
+        product.image = open "public/uploads/product/image/1/#{row.to_h["image"]}"
+        product.save!
+      end
+    end
+    rescue ActiveRecord::RecordInvalid
+      return false
     end
   end
 
