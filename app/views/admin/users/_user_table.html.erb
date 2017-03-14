@@ -1,0 +1,18 @@
+<tr class="user-row">
+  <td class="w20">
+    <%= image_tag user.profile_image.url, alt: t("alt.profile_image"),
+      class: "img-responsive" %>
+  </td>
+  <td class="w20">
+    <strong><%= user.user_name %></strong>
+  </td>
+  <td class="w45">
+    <%= user.email %>
+  </td>
+  <td>
+    <% unless user.is_user? current_user %>
+      <%= link_to t("button.delete"), admin_user_path(user), method: :delete,
+        data: {confirm: t("confirm.are_you_sure")}, class: "text-danger" %>
+    <% end %>
+  </td>
+</tr>

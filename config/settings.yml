@@ -38,3 +38,13 @@ cookie_recently_viewed: 20
 order_status:
   default: 1
 product_add_to_cart_default: 1
+chart_type:
+  number_of_product_day: 1
+  number_of_product_month: 2
+  number_of_product_year: 3
+  income_of_product_day: 4
+  income_of_product_month: 5
+  income_of_product_year: 6
+  income_daily: 7
+  income_monthy: 8
+  income_yearly: 9

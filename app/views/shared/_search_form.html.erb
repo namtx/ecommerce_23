@@ -30,4 +30,11 @@
   <button type="submit" class="btn btn-primary full-width-button">
     <%= t "search_form.search" %>
   </button>
+  <% if yield(:path) == admin_products_path %>
+    <div class="upload-section">
+      <a class="text-danger" data-toggle="modal" data-target="#upload-modal">
+        <%= t "upload_csv" %>
+      </a>
+    </div>
+  <% end %>
 <% end %>

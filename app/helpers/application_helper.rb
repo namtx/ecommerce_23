@@ -7,5 +7,4 @@ module ApplicationHelper
   def rate_select
     (Settings.min_rate..Settings.max_rate).map {|i| [pluralize(i, "star"), i]}
   end
-
 end
