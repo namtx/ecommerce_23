@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <div id="fb-root"></div>
     <%= render "layouts/header" %>
     <div class="container">
       <% flash.each do |message_type, message| %>
@@ -16,5 +17,8 @@
       <% end %>
       <%= yield %>
       <%= render "layouts/footer" %>
+      <% if logged_in?%>
+        <%= javascript_include_tag "subiz_chat", "data-turbolinks-track": "reload" %>
+      <% end %>
   </body>
 </html>
